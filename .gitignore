@@ -1,0 +1,5 @@
+*.vim
+*.log
+node_modules
+testData.json
+server/dist/*

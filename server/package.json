@@ -1,0 +1,16 @@
+{
+  "name": "dogstar-server",
+  "version": "1.0.0",
+  "description": "Dogstar Website Server",
+  "main": "dogstar.js",
+  "scripts": {},
+  "author": "Scott Cazan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "http": "0.0.0",
+    "mongodb": "^2.1.2",
+    "path": "^0.12.7",
+    "underscore": "^1.8.3"
+  }
+}

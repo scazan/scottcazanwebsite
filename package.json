@@ -1,0 +1,28 @@
+{
+  "name": "scottcazan.com",
+  "version": "1.0.0",
+  "description": "scottcazan.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/scottcazan.js",
+    "build": "browserify -t brfs app/scripts/main.js -o server/dist/scripts/main.js && cp -r ./app/index.html ./server/dist/index.html",
+    "copyAppToDist": "cp -r ./app/* ./server/dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scazan/scottcazanwebsite.git"
+  },
+  "author": "Scott Cazan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scazan/scottcazanwebsite/issues"
+  },
+  "homepage": "https://github.com/scazan/scottcazanwebsite#readme",
+  "dependencies": {
+    "backbone": "1.2.3",
+    "brfs": "^1.4.1",
+    "browserify": "^12.0.1",
+    "jquery": "2.1.4",
+    "underscore": "1.8.3"
+  }
+}
