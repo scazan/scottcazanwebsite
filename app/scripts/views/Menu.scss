@@ -1,0 +1,12 @@
+#menu {
+	font-size: 1.25em;
+	text-transform: uppercase;
+	line-height: 8.5rem;
+
+	.link {
+		cursor: crosshair;
+	}
+	.link:active {
+		color: #FAA;
+	}
+}

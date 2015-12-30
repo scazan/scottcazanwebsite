@@ -19,7 +19,10 @@ module.exports = Backbone.View.extend({
 	className: "event",
 	render: function(){
 
-		this.$el.html(this.template(this.model.attributes));
+		var modelAttributes = this.model.attributes;
+
+		modelAttributes.date = modelAttributes.date? modelAttributes.date.slice(0,10) : "";
+		this.$el.html(this.template(modelAttributes));
 
 		return this;
 	},

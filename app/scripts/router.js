@@ -1,7 +1,6 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var AppView = require('./views/appView');
-var EventsCollection = require('./collections/Events');
 
 Backbone.$ = $;
 
@@ -11,21 +10,35 @@ Backbone.$ = $;
  * @return {Backbone.Router}
  */
 module.exports = Backbone.Router.extend({
+	initialize: function intialize() {
+		this.initBaseViews();
+	},
+
 	routes: {
-		"(/)": "index"
+		"(/)": "index",
+		"about(/)": "loadAbout",
+		"events(/)": "loadEvents"
+	},
+
+	initBaseViews: function() {
+		if(!this.baseViewsInitialized) {
+			this.appView = new AppView();
+
+			$('body').append(this.appView.render().el);
+
+			this.baseViewsInitialized = true;
+		}
 	},
 
 	index: function() {
-		var eventsCollection = new EventsCollection();
+		this.appView.showIndex();
+	},
 
-		eventsCollection.fetch({
-			success: function(collection) {
-				var indexView = new AppView({collection: collection});
-				console.log(indexView.render().el);
+	loadAbout: function loadAbout() {
+		this.appView.showAbout();
+	},
 
-				$('body').append(indexView.render().el);
-
-			}.bind(this)
-		});
-	}
+	loadEvents: function loadAbout() {
+		this.appView.showEvents();
+	},
 });

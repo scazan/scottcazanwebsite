@@ -1,0 +1,33 @@
+.event {
+	float: left;
+
+	margin-top: 20px;
+	margin-bottom: 80px;
+
+	width: 800px;
+
+	.left {
+		float: left;
+		width: 140px;
+
+		.date {
+			font-weight: normal;
+		}
+
+	}
+
+	.right {
+		float: left;
+		width: 600px;
+
+		.title {
+			font-size: 1.25rem;
+			font-weight: normal;
+		}
+
+		.location {
+			margin-bottom: 20px;
+		}
+	}
+
+}

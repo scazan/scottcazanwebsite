@@ -1,0 +1,35 @@
+
+#main {
+
+	#header {
+		position: fixed;
+		top: 50px;
+		left: 50px;
+
+		font-size: 4rem;
+		text-transform: uppercase;
+		/*color: #C00;*/
+		color: #DDD;
+		height: 150px;
+	}
+	#header:hover {
+		color: #FAA;
+	}
+
+	#content {
+		position: absolute;
+		top: 200px;
+		margin-left: 300px;
+
+		width: 800px;
+	}
+
+	#menu {
+		position: fixed;
+		top: 145px;
+		left: 50px;
+
+		width: 250px;
+		margin-top: 20px;
+	}
+}

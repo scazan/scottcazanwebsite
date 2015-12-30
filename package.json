@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/scottcazan.js",
-    "build": "npm run buildSCSS && browserify -t brfs app/scripts/main.js -o server/dist/scripts/main.js && cp -r ./app/index.html ./server/dist/index.html",
+    "build": "npm run buildSCSS && browserify -t brfs app/scripts/main.js -o server/dist/scripts/main.js && cp -r ./app/index.html ./server/dist/index.html && cp -r ./app/img/* ./server/dist/img/",
     "copyAppToDist": "cp -r ./app/* ./server/dist/",
 	"buildSCSS": "./buildScripts/buildSCSS.sh"
   },
