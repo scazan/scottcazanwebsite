@@ -4,29 +4,29 @@ var _ = require('underscore');
 var fs = require('fs');
 Backbone.$ = $;
 
-var Template = fs.readFileSync(__dirname + '/templates/Year.html', 'utf8');
+var Template = fs.readFileSync(__dirname + '/templates/Event.html', 'utf8');
 
 /**
- * Year view
+ * Event view
  *
  * @return {Backbone.View}
  */
 module.exports = Backbone.View.extend({
 	events: {
-		"click": "navigateToYear",
+		"click": "navigateToEvent",
 	},
 	template: _.template(Template),
-	className: "year",
+	className: "event",
 	render: function(){
 
 		this.$el.html(this.template(this.model.attributes));
 
 		return this;
 	},
-	navigateToYear: function(e) {
+	navigateToEvent: function(e) {
 		var name = this.model.get('name').split(' ').join('_');
 
-		global.app.router.navigate('/years/' + name + this.model.get('year') );
+		global.app.router.navigate('/events/' + name + this.model.get('event') );
 		global.app.trigger('Content:loadEvents', this.model.get('events') );
 		
 	},

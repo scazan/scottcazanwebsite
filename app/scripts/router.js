@@ -1,7 +1,7 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var AppView = require('./views/appView');
-var YearsCollection = require('./collections/Years');
+var EventsCollection = require('./collections/Events');
 
 Backbone.$ = $;
 
@@ -16,11 +16,12 @@ module.exports = Backbone.Router.extend({
 	},
 
 	index: function() {
-		var yearsCollection = new YearsCollection();
+		var eventsCollection = new EventsCollection();
 
-		yearsCollection.fetch({
+		eventsCollection.fetch({
 			success: function(collection) {
 				var indexView = new AppView({collection: collection});
+				console.log(indexView.render().el);
 
 				$('body').append(indexView.render().el);
 

@@ -3,7 +3,7 @@ var Backbone = require('backbone');
 Backbone.$ = $;
 
 /**
- * Year model
+ * Event model
  *
  * @return {undefined}
  */

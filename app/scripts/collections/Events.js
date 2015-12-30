@@ -3,15 +3,15 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 
-var YearsModel = require('../models/Year');
+var EventModel = require('../models/Event');
 
 
 /**
- * Years Collection
+ * Events Collection
  *
  * @return {Backbone.Collection}
  */
 module.exports = Backbone.Collection.extend({
-	url: "/api/years",
-	model: YearsModel,
+	url: "/api/events",
+	model: EventModel,
 });

@@ -2,8 +2,8 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 Backbone.$ = $;
 
-var YearsCollection = require('../collections/Years');
-var YearsView = require('../views/Years');
+var EventsCollection = require('../collections/Events');
+var EventsView = require('../views/Events');
 
 /**
  * Main App View
@@ -12,11 +12,11 @@ var YearsView = require('../views/Years');
  */
 module.exports = Backbone.View.extend({
 	initialize: function(){
-		this.yearsView = new YearsView({collection: this.collection});
+		this.eventsView = new EventsView({collection: this.collection});
 	},
 
 	render: function(){
-		this.el.appendChild(this.yearsView.render().el);
+		this.el.appendChild(this.eventsView.render().el);
 		return this;
 	}
 });
