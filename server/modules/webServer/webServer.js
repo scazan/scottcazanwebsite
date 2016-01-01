@@ -49,6 +49,18 @@ module.exports = function(options) {
 		});
 	});
 
+	app.get('/api/works', function(req, res){
+		this.db.open(function() {
+			this.db.collection('works', function(error, collection) {
+				collection.find().toArray(function(e, results) {
+					res.send( results );
+					db.close();
+				});
+
+			});
+		});
+	});
+
 	app.get('*', function(req, res){
 		res.sendfile( path.join( __dirname, '../../dist/index.html' ) );
 	});

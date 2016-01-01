@@ -7,12 +7,59 @@
 		
 		li {
 			margin-bottom: 48px;
+			cursor: crosshair;
+		}
+		li:active {
+			color: #FAA;
+		}
+		li.muted {
+			text-decoration: line-through;
+		}
+		li.all.muted {
+			text-decoration: none;
+			color: #555;
 		}
 	}
 
 	.worksContent {
 		position: absolute;
 		left: 250px;
+		width: 790px; /* Needed this avoid scrollbars in 1080p. 800px ideally */
+
+		.work {
+			width: 180px;
+			padding: 10px;
+
+			line-height: 1em;
+
+			margin-bottom: 50px;
+			
+			p {
+				margin-bottom: 25px;
+			}
+
+			.title {
+				font-weight: normal;
+				margin-bottom: 25px;
+			}
+
+			.image img, .video {
+				width: 100%;
+			}
+
+			.media {
+				height: 20px;
+				margin-top: 25px;
+				margin-bottom: 25px;
+			}
+
+			.description {
+				font-size: 0.75em;
+			}
+		}
+		.work:hover {
+			outline: 1px dotted #222;
+		}
 	}
 
 

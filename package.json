@@ -7,7 +7,7 @@
     "start": "node server/scottcazan.js",
     "build": "npm run buildSCSS && browserify -t brfs app/scripts/main.js -o server/dist/scripts/main.js && cp -r ./app/index.html ./server/dist/index.html && cp -r ./app/img/* ./server/dist/img/",
     "copyAppToDist": "cp -r ./app/* ./server/dist/",
-	"buildSCSS": "./buildScripts/buildSCSS.sh"
+    "buildSCSS": "./buildScripts/buildSCSS.sh"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "brfs": "^1.4.1",
     "browserify": "^12.0.1",
     "jquery": "2.1.4",
+    "masonry-layout": "^3.3.2",
     "underscore": "1.8.3"
   }
 }

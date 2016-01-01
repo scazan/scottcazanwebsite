@@ -1,11 +1,18 @@
 .about {
 	p {
 		text-align: justify;
-		margin-bottom: 1rem;
+		margin-bottom: 50px;
 	}
 
 	img {
 		width: 800px;
 		margin-bottom: 40px;
+	}
+
+	h3 {
+		font-weight: normal;
+		margin-bottom: 50px;
+		margin-top: 50px;
+		text-transform: uppercase;
 	}
 }

@@ -1,10 +1,13 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
+var Masonry = require('masonry-layout');
 var fs = require('fs');
 var _ = require('underscore');
 Backbone.$ = $;
 
+var WorksCollection = require('../collections/Works');
 var EventsCollection = require('../collections/Events');
+
 var EventsView = require('../views/Events');
 var AboutView = require('../views/About');
 var WorksView = require('../views/Works');
@@ -39,7 +42,9 @@ module.exports = Backbone.View.extend({
 
 		this.eventsView = new EventsView({collection: eventsCollection});
 		this.aboutView = new AboutView();
-		this.worksView = new WorksView();
+
+		var worksCollection = new WorksCollection();
+		this.worksView = new WorksView({collection: worksCollection});
 	},
 
 	showIndex: function showEvents() {
@@ -60,6 +65,17 @@ module.exports = Backbone.View.extend({
 
 	showWorks: function showEvents() {
 		this.$('#content').html(this.worksView.render().el);
+		this.worksView.collection.fetch({
+			success: function(collection) {
+				this.worksView.render();
+
+				var msnry = new Masonry( '.worksContent', {
+					itemSelector: '.work',
+					columnWidth: 200,
+					gutter: 50
+				});
+			}.bind(this)
+		});
 	},
 
 });
