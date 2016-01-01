@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
 var fs = require('fs');
+var Masonry = require('masonry-layout');
 Backbone.$ = $;
 
 var WorkView = require('./Work');
@@ -30,6 +31,10 @@ module.exports = Backbone.View.extend({
 
 		this.$el.html(this.template());
 		this.delegateEvents();
+
+		$('img').on('load', function() {
+			this.reMasonLayout();
+		}.bind(this));
 
 		this.collection.each(function(work) {
 			var workView = new WorkView({model: work});
@@ -80,10 +85,20 @@ module.exports = Backbone.View.extend({
 			this.$('.work').hide();
 			this.$('.category-'+category).show();
 		}
+
+		this.reMasonLayout();
+	},
+	reMasonLayout: function reMasonLayout() {
+		var msnry = new Masonry( '.worksContent', {
+			itemSelector: '.work',
+			columnWidth: 200,
+			gutter: 50
+		});
 	},
 
 	showAll: function showAll() {
 		this.$('.work').show();
 		this.$('.menu li').removeClass('muted');
+		this.reMasonLayout();
 	},
 });
