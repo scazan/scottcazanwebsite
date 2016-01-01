@@ -7,6 +7,7 @@ Backbone.$ = $;
 var EventsCollection = require('../collections/Events');
 var EventsView = require('../views/Events');
 var AboutView = require('../views/About');
+var WorksView = require('../views/Works');
 var MenuView = require('../views/Menu');
 
 var Template = fs.readFileSync(__dirname + '/templates/App.html', 'utf8');
@@ -38,6 +39,7 @@ module.exports = Backbone.View.extend({
 
 		this.eventsView = new EventsView({collection: eventsCollection});
 		this.aboutView = new AboutView();
+		this.worksView = new WorksView();
 	},
 
 	showIndex: function showEvents() {
@@ -54,6 +56,10 @@ module.exports = Backbone.View.extend({
 
 	showAbout: function showEvents() {
 		this.$('#content').html(this.aboutView.render().el);
+	},
+
+	showWorks: function showEvents() {
+		this.$('#content').html(this.worksView.render().el);
 	},
 
 });

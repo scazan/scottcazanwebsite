@@ -1,10 +1,13 @@
 #menu {
 	font-size: 1.25em;
 	text-transform: uppercase;
-	line-height: 8.5rem;
+	/*line-height: 8.5rem;*/
 
 	.link {
-		cursor: crosshair;
+		cursor: e-resize;
+		margin-bottom: 120px;
+	}
+	.link:hover {
 	}
 	.link:active {
 		color: #FAA;

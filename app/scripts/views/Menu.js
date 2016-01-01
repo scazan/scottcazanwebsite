@@ -15,6 +15,7 @@ module.exports = Backbone.View.extend({
 	events: {
 		"click .about": "navigateToAbout",
 		"click .events": "navigateToEvents",
+		"click .works": "navigateToWorks",
 	},
 	template: _.template(Template),
 	className: "menu",
@@ -29,6 +30,9 @@ module.exports = Backbone.View.extend({
 	},
 	navigateToEvents: function(e) {
 		this.navigate('/events');
+	},
+	navigateToWorks: function(e) {
+		this.navigate('/works');
 	},
 	navigate: function navigate(location) {
 		global.app.router.navigate(location, {trigger: true});

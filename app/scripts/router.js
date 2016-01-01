@@ -17,7 +17,8 @@ module.exports = Backbone.Router.extend({
 	routes: {
 		"(/)": "index",
 		"about(/)": "loadAbout",
-		"events(/)": "loadEvents"
+		"events(/)": "loadEvents",
+		"works(/)": "loadWorks"
 	},
 
 	initBaseViews: function() {
@@ -40,5 +41,9 @@ module.exports = Backbone.Router.extend({
 
 	loadEvents: function loadAbout() {
 		this.appView.showEvents();
+	},
+
+	loadWorks: function loadAbout() {
+		this.appView.showWorks();
 	},
 });
