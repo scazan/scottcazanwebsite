@@ -28,6 +28,12 @@
 		.location {
 			margin-bottom: 20px;
 		}
+
+		@media (min-width: 2000px) {
+			.longDescription {
+				width: 1500px;
+			}
+		}
 	}
 
 }
