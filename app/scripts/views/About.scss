@@ -15,4 +15,13 @@
 		margin-top: 50px;
 		text-transform: uppercase;
 	}
+
+	@media (min-width: 2000px) {
+		p {
+			width: 1500px;
+		}
+		/*img {*/
+			/*width: 1500px;*/
+		/*}*/
+	}
 }

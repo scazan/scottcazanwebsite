@@ -44,6 +44,7 @@ module.exports = Backbone.View.extend({
 		this.aboutView = new AboutView();
 
 		var worksCollection = new WorksCollection();
+		worksCollection.comparator = "sortOrder";
 		this.worksView = new WorksView({collection: worksCollection});
 	},
 

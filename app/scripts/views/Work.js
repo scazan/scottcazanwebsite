@@ -19,7 +19,7 @@ module.exports = Backbone.View.extend({
 	render: function(){
 
 		this.$el.html(this.template(this.model.attributes));
-		this.model.get('categories').each(function(category) {
+		_.each(this.model.get('categories'), function(category) {
 			this.$el.addClass('category-'+category);
 		}.bind(this));
 

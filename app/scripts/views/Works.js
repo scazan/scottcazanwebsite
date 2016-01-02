@@ -17,8 +17,10 @@ var Template = fs.readFileSync(__dirname + '/templates/Works.html', 'utf8');
 module.exports = Backbone.View.extend({
 	events: {
 		'click li.music': 'toggleMusic',
-		'click li.scores': 'toggleScores',
+		'click li.album': 'toggleAlbums',
+		'click li.score': 'toggleScores',
 		'click li.installation': 'toggleInstallation',
+		'click li.collaboration': 'toggleCollaborations',
 		'click li.code': 'toggleCode',
 		'click li.all': 'showAll',
 	},
@@ -39,7 +41,7 @@ module.exports = Backbone.View.extend({
 		this.collection.each(function(work) {
 			var workView = new WorkView({model: work});
 
-			this.$('.workContents').append(workView.render().el);
+			this.$('.worksContent').append(workView.render().el);
 		}.bind(this));
 
 		return this;
@@ -57,7 +59,15 @@ module.exports = Backbone.View.extend({
 	},
 
 	toggleScores: function toggleScores() {
-		this.toggleCategory('scores');
+		this.toggleCategory('score');
+	},
+	
+	toggleCollaborations: function toggleCollaborations() {
+		this.toggleCategory('collaboration');
+	},
+
+	toggleAlbums: function toggleAlbums() {
+		this.toggleCategory('album');
 	},
 
 	toggleInstallation: function toggleInstallation() {
