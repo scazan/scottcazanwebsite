@@ -45,10 +45,11 @@
 
 			.image img, .video {
 				width: 100%;
+				margin-bottom: 25px;
 			}
 
 			.media {
-				height: 20px;
+				min-height: 20px;
 				margin-top: 25px;
 				margin-bottom: 25px;
 			}
@@ -57,11 +58,16 @@
 				font-size: 0.75em;
 			}
 		}
-		.work:hover {
+		.work {
 			outline: 1px dotted #222;
 		}
 	}
 
+	@media (min-width: 1560px) {
+		.worksContent {
+			width: 1000px;
+		}
+	}
 	@media (min-width: 2000px) {
 		.worksContent {
 			width: 1500px;

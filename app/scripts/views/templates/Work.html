@@ -2,16 +2,29 @@
 	<%= title %>
 </div>
 
+<% if(media) { %>
+<div class="media">
+	<%= media %>
+</div>
+<% } %>
+
 <% if(image) { %>
 <div class="image">
 	<img src="<%=image%>"/>
 </div>
 <% } %>
 
-<% if(media) { %>
-<div class="media">
-	<%= media %>
+
+<% if(video) { %>
+<div class="video">
+	<%= video %>
 </div>
+<% } %>
+
+<% if(score) { %>
+<p class="score">
+	<a href="<%=score%>" target="_blank">score→</a>
+</p>
 <% } %>
 
 <% if(description) { %>
@@ -20,9 +33,4 @@
 </div>
 <% } %>
 
-<% if(video) { %>
-<div class="video">
-	<%= video %>
-</div>
-<% } %>
 

@@ -10,6 +10,7 @@ Backbone.$ = $;
 module.exports = Backbone.Model.extend({
 	defaults: {
 		title: undefined,
+		score: undefined,
 		image: undefined,
 		video: undefined,
 		media: undefined,

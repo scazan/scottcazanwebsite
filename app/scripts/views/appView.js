@@ -70,13 +70,13 @@ module.exports = Backbone.View.extend({
 			success: function(collection) {
 				this.worksView.render();
 
-				var msnry = new Masonry( '.worksContent', {
-					itemSelector: '.work',
-					columnWidth: 200,
-					gutter: 50
-				});
+				this.worksView.reMasonLayout();
 			}.bind(this)
 		});
+
+		window.setTimeout(function rebind() {
+			this.worksView.reMasonLayout();
+		}.bind(this), 200);
 	},
 
 });
