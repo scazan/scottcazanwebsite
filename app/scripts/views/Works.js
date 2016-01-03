@@ -44,6 +44,8 @@ module.exports = Backbone.View.extend({
 			this.$('.worksContent').append(workView.render().el);
 		}.bind(this));
 
+		this.categoriesEnabled = [];
+
 		return this;
 	},
 
@@ -82,10 +84,20 @@ module.exports = Backbone.View.extend({
 			if(this.$('li.'+category).hasClass('muted')) {
 				this.$('li.'+category).removeClass('muted');
 				this.$('.category-'+category).show();
+
+				this.categoriesEnabled.push(category);
 			}
 			else {
+				this.categoriesEnabled = _.reject(this.categoriesEnabled, function(enabledCategory) {
+					return enabledCategory == category;
+				});
+				this.$('.work').hide();
+
+				_.each(this.categoriesEnabled, function(enabledCategory) {
+					this.$('.category-'+enabledCategory).show();
+				}.bind(this));
+
 				this.$('li.'+category).addClass('muted');
-				this.$('.category-'+category).hide();
 			}
 		}
 		else {
@@ -94,6 +106,7 @@ module.exports = Backbone.View.extend({
 
 			this.$('.work').hide();
 			this.$('.category-'+category).show();
+			this.categoriesEnabled = [category];
 		}
 
 		this.reMasonLayout();
