@@ -31,7 +31,7 @@ module.exports = Backbone.View.extend({
 	initialize: function initialize() {
 		this.eventsCollection = new EventsCollection();
 		this.eventsCollection.comparator = function(event) {
-			return -event.get('date');
+			return -moment(event.get('date')).valueOf();
 		};
 
 		this.worksCollection = new WorksCollection();
