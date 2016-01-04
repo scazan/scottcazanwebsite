@@ -8,9 +8,10 @@
 
 		font-size: 4rem;
 		text-transform: uppercase;
-		/*color: #C00;*/
 		color: #DDD;
-		height: 150px;
+		height: 50px;
+
+		cursor: e-resize;
 	}
 	#header:hover {
 		color: #FAA;

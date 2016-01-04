@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
 var fs = require('fs');
+var moment = require('moment');
 Backbone.$ = $;
 
 var Template = fs.readFileSync(__dirname + '/templates/Event.html', 'utf8');
@@ -21,7 +22,7 @@ module.exports = Backbone.View.extend({
 
 		var modelAttributes = this.model.attributes;
 
-		modelAttributes.date = modelAttributes.date? modelAttributes.date.slice(0,10) : "";
+		modelAttributes.date = moment(modelAttributes.date).format("MM-DD-YYYY");
 		this.$el.html(this.template(modelAttributes));
 
 		return this;

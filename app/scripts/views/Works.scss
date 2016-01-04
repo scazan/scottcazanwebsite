@@ -26,6 +26,21 @@
 		left: 250px;
 		width: 790px; /* Needed this avoid scrollbars in 1080p. 800px ideally */
 
+	}
+
+	@media (min-width: 1560px) {
+		.worksContent {
+			width: 1000px;
+		}
+	}
+	@media (min-width: 2000px) {
+		.worksContent {
+			width: 1500px;
+		}
+	}
+
+}
+
 		.work {
 			width: 180px;
 			padding: 10px;
@@ -52,6 +67,10 @@
 				min-height: 20px;
 				margin-top: 25px;
 				margin-bottom: 25px;
+
+				.loader {
+					color: #444;
+				}
 			}
 
 			.description {
@@ -61,17 +80,3 @@
 		.work {
 			outline: 1px dotted #222;
 		}
-	}
-
-	@media (min-width: 1560px) {
-		.worksContent {
-			width: 1000px;
-		}
-	}
-	@media (min-width: 2000px) {
-		.worksContent {
-			width: 1500px;
-		}
-	}
-
-}

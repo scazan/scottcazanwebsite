@@ -1,0 +1,56 @@
+
+.home {
+	position: relative;
+	width: 900px;
+
+	h3 {
+		text-transform: uppercase;
+		font-weight: normal;
+		margin-bottom: 50px;
+	}
+
+	.left {
+		width: 350px;
+
+		.events {
+		}
+
+		.news {
+			display: none;
+			height: 200px;
+		}
+	}
+
+
+	.right {
+		position: absolute;
+		top: 0;
+		left: 500px;
+
+		.works {
+			width: 750px;
+
+			.work {
+				float: left;
+				margin-right: 50px;
+			}
+		}
+	}
+
+	.event  {
+		margin-bottom: 50px;
+		margin-top: 0;
+
+		.right {
+			position: static;
+			top: initial;
+			left: initial;
+
+			width: 200px;
+
+			.location {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

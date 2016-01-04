@@ -42,7 +42,7 @@ module.exports = function(options) {
 			this.db.collection('events', function(error, collection) {
 				collection.find().toArray(function(e, results) {
 					res.send( results );
-					db.close();
+					//db.close();
 				});
 
 			});
@@ -54,7 +54,7 @@ module.exports = function(options) {
 			this.db.collection('works', function(error, collection) {
 				collection.find().toArray(function(e, results) {
 					res.send( results );
-					db.close();
+					//db.close();
 				});
 
 			});

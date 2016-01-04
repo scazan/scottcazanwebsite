@@ -7,9 +7,21 @@
 		cursor: e-resize;
 		margin-bottom: 120px;
 	}
+
+	.link.about {
+		width: 72px;
+	}
+	.link.works {
+		width: 65px;
+	}
+	.link.events {
+		width: 72px;
+	}
 	.link:hover {
+		/*border-bottom: 1px dotted #DDD;*/
 	}
 	.link:active {
 		color: #FAA;
+		/*border-bottom: 1px dotted #FAA;*/
 	}
 }
