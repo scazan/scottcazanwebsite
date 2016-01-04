@@ -75,11 +75,12 @@ module.exports = Backbone.View.extend({
 	},
 
 	showIndex: function showEvents() {
-
 		global.app.router.navigate("/", {trigger: false});
 		this.$el.html( this.template() );
 		this.$('#menu').html(this.menuView.render().el);
 		this.$('#content').append(this.homeView.render().el);
+
+		window.scrollTo(0, 0);
 	},
 
 	showEvents: function showEvents() {
@@ -94,10 +95,13 @@ module.exports = Backbone.View.extend({
 				this.eventsView.render();
 			}.bind(this)
 		});
+
+		window.scrollTo(0, 0);
 	},
 
 	showAbout: function showEvents() {
 		this.$('#content').html(this.aboutView.render().el);
+		window.scrollTo(0, 0);
 	},
 
 	showWorks: function showEvents() {
@@ -113,6 +117,8 @@ module.exports = Backbone.View.extend({
 		window.setTimeout(function rebind() {
 			this.worksView.reMasonLayout();
 		}.bind(this), 200);
+
+		window.scrollTo(0, 0);
 	},
 
 });
