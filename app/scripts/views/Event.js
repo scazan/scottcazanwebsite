@@ -14,7 +14,7 @@ var Template = fs.readFileSync(__dirname + '/templates/Event.html', 'utf8');
  */
 module.exports = Backbone.View.extend({
 	events: {
-		"click": "navigateToEvent",
+		//"click": "navigateToEvent",
 	},
 	template: _.template(Template),
 	className: "event",

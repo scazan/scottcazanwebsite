@@ -26,7 +26,6 @@
 
 		.location {
 			margin-bottom: 25px;
-			font-size: 0.75rem;
 		}
 
 		p {
@@ -44,4 +43,11 @@
 
 .event:first-of-type {
 	margin-top: 0;
+}
+
+
+.home {
+	.location {
+		font-size: 0.75rem;
+	}
 }
