@@ -1,0 +1,96 @@
+$baseFontSize: 0.75em;
+/*$marginGrain: 12px;*/
+$marginGrain: $baseFontSize * 0.75;
+
+/*@media print {*/
+
+	body.CVView {
+		line-height: $baseFontSize * 1.75;
+
+		font-size: $baseFontSize;
+		
+		@page {
+			size: A4;
+		}
+		@page:right{
+			@bottom-right {
+				content: counter(page);
+			}
+		}
+
+		background: initial;
+		color: #000;
+
+		font-family: "Crimson Text", georgia, sans-serif;
+
+		header {
+			margin-bottom: $marginGrain * 4;
+		}
+
+		h1 {
+			font-size: $baseFontSize * 2;
+			font-weight: bold;
+			margin-bottom: $marginGrain * 4;
+		}
+
+		h3 {
+			font-size: $baseFontSize * 1.25;
+			font-weight: bold;
+		}
+
+
+		/*.CVEducation {*/
+		section {
+			margin-bottom: $marginGrain * 4;
+
+			.CVEducationEntry, .CVExperience {
+				margin-left: $marginGrain * 2;
+				margin-bottom: $marginGrain;
+
+				.degree, .employer {
+					font-weight: bold;
+				}
+
+				.description {
+					width: 550px;
+				}
+
+				.honors {
+					font-style: italic;
+				}
+			}
+
+		}
+
+		.CVEvent, p {
+			page-break-inside: avoid;
+		}
+
+		.CVEvent, .CVPublication {
+			margin-left: $marginGrain * 2;
+
+			.date, .content {
+				display: inline-block;
+			}
+
+			.date {
+				vertical-align: top;
+				width: $marginGrain * 8;
+			}
+			.content {
+				width: 550px;
+			}
+			.piece, .name {
+				font-weight: 600;
+			}
+		}
+
+		.CVPublication {
+			.date {
+				/*padding-left: 18px;*/
+				padding-left: $baseFontSize * 1.125;
+				width: ($marginGrain * 8) - ($baseFontSize * 1.125);
+			}
+		}
+	}
+/*}*/

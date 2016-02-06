@@ -1,0 +1,19 @@
+
+<div class="date">
+	<%= date %>
+</div>
+<div class="content">
+<% if(piece) { %>
+<span class="piece"> <%= piece %></span>,
+<% } %>
+ <%= venue %> - 
+<% if(city) { %>
+	<%= city %>, <%= state %> <%= country %>
+<% } %>
+</div>
+<% if(cvDescription) { %>
+<div class="cvDescription">
+	<%= cvDescription %>
+</div>
+<% } %>
+

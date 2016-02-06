@@ -49,6 +49,18 @@ module.exports = function(options) {
 		});
 	});
 
+	app.get('/api/cv', function(req, res){
+		this.db.open(function() {
+			this.db.collection('cv', function(error, collection) {
+				collection.find().toArray(function(e, results) {
+					res.send( results );
+					//db.close();
+				});
+
+			});
+		});
+	});
+
 	app.get('/api/works', function(req, res){
 		this.db.open(function() {
 			this.db.collection('works', function(error, collection) {

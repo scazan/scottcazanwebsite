@@ -1,6 +1,7 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var AppView = require('./views/appView');
+var CVView = require('./views/CV');
 
 Backbone.$ = $;
 
@@ -18,6 +19,7 @@ module.exports = Backbone.Router.extend({
 		"(/)": "index",
 		"about(/)": "loadAbout",
 		"events(/)": "loadEvents",
+		"cv(/)": "loadCV",
 		"works(/)": "loadWorks"
 	},
 
@@ -29,6 +31,8 @@ module.exports = Backbone.Router.extend({
 
 			this.baseViewsInitialized = true;
 		}
+
+		console.log('loaded');
 	},
 
 	index: function() {
@@ -45,5 +49,12 @@ module.exports = Backbone.Router.extend({
 
 	loadWorks: function loadAbout() {
 		this.appView.showWorks();
+	},
+	loadCV: function loadAbout() {
+		var cvView = new CVView();
+
+		$('body').addClass('CVView');
+		$('body').html(cvView.render().el);
+		console.log('CV loaded');
 	},
 });
