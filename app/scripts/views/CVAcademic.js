@@ -7,23 +7,35 @@ Backbone.$ = $;
 
 var CVModel = require('../models/CVData');
 
-var Template = fs.readFileSync(__dirname + '/templates/CVPublication.html', 'utf8');
+var Template = fs.readFileSync(__dirname + '/templates/CVAcademic.html', 'utf8');
 
 /**
- * CV Publication View
+ * CV Academic View
  *
  * @return {Backbone.View}
  */
 module.exports = Backbone.View.extend({
 	template: _.template(Template),
-	className: "CVPublication",
+	className: "CVAcademic",
 	initialize: function(){
 	},
 	render: function(){
 
 		var modelAttributes = this.model.attributes;
 
-		modelAttributes.date = moment(modelAttributes.date).format("MM/YYYY");
+		var date;
+
+		if(modelAttributes.startDate && modelAttributes.startDate.length) {
+			date = moment(modelAttributes.startDate).format("M/YYYY");
+
+			var endDate = modelAttributes.endDate;
+			if(endDate && endDate.length) {
+				date += "-" + (endDate == "Present" ? "Present" : moment(endDate).format("M/YYYY") );
+			}
+		}
+
+		modelAttributes.date = date;
+
 		this.$el.html(this.template(this.model.attributes));
 
 		return this;

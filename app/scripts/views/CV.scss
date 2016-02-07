@@ -43,11 +43,11 @@ $marginGrain: $baseFontSize * 0.75;
 		section {
 			margin-bottom: $marginGrain * 4;
 
-			.CVEducationEntry, .CVExperience {
+			.CVEducationEntry, .CVExperience, .CVAcademic {
 				margin-left: $marginGrain * 2;
 				margin-bottom: $marginGrain;
 
-				.degree, .employer {
+				.degree, .employer, .name {
 					font-weight: bold;
 				}
 
@@ -56,6 +56,10 @@ $marginGrain: $baseFontSize * 0.75;
 				}
 
 				.honors {
+					font-style: italic;
+				}
+
+				.positions, .date {
 					font-style: italic;
 				}
 			}

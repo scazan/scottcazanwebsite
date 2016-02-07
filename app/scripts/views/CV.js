@@ -9,6 +9,7 @@ var EventsCollection = require('../collections/Events');
 var CVCollection = require('../collections/CVData');
 var CVPublicationView = require('../views/CVPublication');
 var CVExperienceView = require('../views/CVExperience');
+var CVAcademicView = require('../views/CVAcademic');
 var CVModel = require('../models/CVData');
 var EventView = require('./CVEvent');
 
@@ -65,6 +66,14 @@ module.exports = Backbone.View.extend({
 				var view = new CVExperienceView({model: new CVModel(experience) });
 
 				this.$('.CVExperiences').append(view.render().el);
+			}.bind(this));
+
+			var academics = this.CVCollection.models[0].attributes.academic;
+
+			_.each(academics, function(academic) {
+				var view = new CVAcademicView({model: new CVModel(academic) });
+
+				this.$('.CVAcademics').append(view.render().el);
 			}.bind(this));
 
 			var publications = this.CVCollection.models[0].attributes.publications;

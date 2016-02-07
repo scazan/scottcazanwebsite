@@ -23,7 +23,7 @@ module.exports = Backbone.View.extend({
 
 		var modelAttributes = this.model.attributes;
 
-		modelAttributes.date = moment(modelAttributes.date).format("MM-YYYY");
+		modelAttributes.date = moment(modelAttributes.date).format("MM/YYYY");
 		this.$el.html(this.template(this.model.attributes));
 
 		return this;
