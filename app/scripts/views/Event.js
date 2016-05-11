@@ -20,7 +20,7 @@ module.exports = Backbone.View.extend({
 	className: "event",
 	render: function(){
 
-		var modelAttributes = this.model.attributes;
+		var modelAttributes = _.clone(this.model.attributes);
 
 		modelAttributes.date = moment(modelAttributes.date).format("MM-DD-YYYY");
 		this.$el.html(this.template(modelAttributes));
