@@ -44,13 +44,11 @@ module.exports = Backbone.View.extend({
 			}
 
 			if(eventsToAppend.length > 0) {
-				console.log('appending', eventsToAppend);
 				_.each(eventsToAppend, function(event) {
 					this.$('.left .events').append(eventsToAppend[i]);
 				}, this);
 			}
 			else {
-				console.log('hiding');
 				this.$('.left').hide();
 				this.$('.right').css({left: 0});
 			}
