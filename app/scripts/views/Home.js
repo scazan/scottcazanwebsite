@@ -31,14 +31,26 @@ module.exports = Backbone.View.extend({
 		if(this.events.length > 0) {
 
 			var todaysDate = moment().valueOf();
+			var eventsToAppend = [];
 
 			for(var i=0; i<=2; i++) {
 				var model = this.events.models[i];
 
 				// If the event is in the future, then show it
 				if(todaysDate < moment(model.get('date')).valueOf()) {
-					this.$('.left .events').append(new EventView({model: model}).render().el);
+					events.append.push(new EventView({model: model}).render().el);
+					//this.$('.left .events').append(new EventView({model: model}).render().el);
 				}
+			}
+
+			if(eventsToAppend.length > 0) {
+				_.each(eventsToAppend, function(event) {
+					this.$('.left .events').append(eventsToAppend[i]);
+				}, this);
+			}
+			else {
+				this.$('.left').hide();
+				this.$('.right').css({left: 0});
 			}
 		}
 
