@@ -45,7 +45,7 @@ module.exports = Backbone.View.extend({
 
 			if(eventsToAppend.length > 0) {
 				_.each(eventsToAppend, function(event) {
-					this.$('.left .events').append(eventsToAppend[i]);
+					this.$('.left .events').append(event);
 				}, this);
 			}
 			else {
