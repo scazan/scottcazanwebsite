@@ -38,7 +38,7 @@ module.exports = Backbone.View.extend({
 
 				// If the event is in the future, then show it
 				if(todaysDate < moment(model.get('date')).valueOf()) {
-					this.events.append.push(new EventView({model: model}).render().el);
+					eventsToAppend.push(new EventView({model: model}).render().el);
 					//this.$('.left .events').append(new EventView({model: model}).render().el);
 				}
 			}
